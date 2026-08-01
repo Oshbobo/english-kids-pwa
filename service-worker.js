@@ -1,7 +1,8 @@
-const VERSION = 'english-kids-v1.1.0';
+const VERSION = 'english-kids-v1.2.0';
 const STATIC_CACHE = `${VERSION}-static`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const MEDIA_CACHE = `${VERSION}-media`;
+
 const CORE = [
   './','./index.html','./offline.html','./manifest.webmanifest',
   './css/reset.css','./css/variables.css','./css/layout.css','./css/components.css','./css/activities.css','./css/animations.css','./css/responsive.css',
@@ -10,31 +11,92 @@ const CORE = [
   './data/course.json','./data/lessons.json','./data/words.json','./data/sentences.json','./data/rewards.json','./data/settings.json',
   './assets/images/words/placeholder.svg','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/icon-maskable-512.png'
 ];
+
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(STATIC_CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
+  event.waitUntil((async () => {
+    const cache = await caches.open(STATIC_CACHE);
+    await Promise.all(CORE.map(async url => {
+      try {
+        const response = await fetch(url, { cache: 'reload' });
+        if (response.ok) await cache.put(url, response);
+      } catch (error) {
+        console.warn('Could not precache', url, error);
+      }
+    }));
+    await self.skipWaiting();
+  })());
 });
+
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => ![STATIC_CACHE,CONTENT_CACHE,MEDIA_CACHE].includes(key)).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys
+      .filter(key => key.startsWith('english-kids-') && ![STATIC_CACHE, CONTENT_CACHE, MEDIA_CACHE].includes(key))
+      .map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
+
+self.addEventListener('message', event => {
+  if (event.data === 'SKIP_WAITING') self.skipWaiting();
+});
+
 async function cacheFirst(request) {
-  const cached = await caches.match(request); if (cached) return cached;
-  const response = await fetch(request); if (response?.ok) (await caches.open(MEDIA_CACHE)).put(request,response.clone()); return response;
+  const cached = await caches.match(request);
+  if (cached) return cached;
+  const response = await fetch(request);
+  if (response?.ok) (await caches.open(MEDIA_CACHE)).put(request, response.clone());
+  return response;
 }
-async function staleWhileRevalidate(request) {
-  const cache = await caches.open(CONTENT_CACHE); const cached = await cache.match(request);
-  const network = fetch(request).then(response => { if(response?.ok) cache.put(request,response.clone()); return response; }).catch(()=>null);
-  return cached || network || new Response('{}',{headers:{'Content-Type':'application/json'}});
-}
-async function networkFirst(request) {
+
+async function networkFirst(request, fallbackUrl = null) {
   const cache = await caches.open(STATIC_CACHE);
-  try { const response = await fetch(request); if(response?.ok) cache.put(request,response.clone()); return response; }
-  catch { return (await cache.match(request)) || (await cache.match('./index.html')) || (await cache.match('./offline.html')); }
+  try {
+    const response = await fetch(request, { cache: 'no-store' });
+    if (response?.ok) await cache.put(request, response.clone());
+    return response;
+  } catch (error) {
+    return (await cache.match(request)) ||
+      (fallbackUrl ? await cache.match(fallbackUrl) : null) ||
+      Response.error();
+  }
 }
+
+async function contentNetworkFirst(request) {
+  const cache = await caches.open(CONTENT_CACHE);
+  try {
+    const response = await fetch(request, { cache: 'no-store' });
+    if (response?.ok) await cache.put(request, response.clone());
+    return response;
+  } catch (error) {
+    return (await cache.match(request)) || new Response('{}', { headers: { 'Content-Type': 'application/json' } });
+  }
+}
+
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  const url = new URL(event.request.url); if (url.origin !== self.location.origin) return;
-  if (event.request.mode === 'navigate' || event.request.destination === 'document') { event.respondWith(networkFirst(event.request)); return; }
-  if (url.pathname.endsWith('.json')) { event.respondWith(staleWhileRevalidate(event.request)); return; }
-  if (['image','audio','font'].includes(event.request.destination) || /\.(png|webp|avif|svg|mp3|ogg|wav)$/i.test(url.pathname)) { event.respondWith(cacheFirst(event.request)); return; }
-  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => { if(response?.ok) caches.open(STATIC_CACHE).then(cache=>cache.put(event.request,response.clone())); return response; })));
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) return;
+
+  if (event.request.mode === 'navigate' || event.request.destination === 'document') {
+    event.respondWith(networkFirst(event.request, './index.html'));
+    return;
+  }
+
+  if (url.pathname.endsWith('.json')) {
+    event.respondWith(contentNetworkFirst(event.request));
+    return;
+  }
+
+  if (['script', 'style', 'worker'].includes(event.request.destination) || /\.(js|css|webmanifest)$/i.test(url.pathname)) {
+    event.respondWith(networkFirst(event.request));
+    return;
+  }
+
+  if (['image', 'audio', 'font'].includes(event.request.destination) || /\.(png|webp|avif|svg|mp3|ogg|wav)$/i.test(url.pathname)) {
+    event.respondWith(cacheFirst(event.request));
+    return;
+  }
+
+  event.respondWith(networkFirst(event.request));
 });
