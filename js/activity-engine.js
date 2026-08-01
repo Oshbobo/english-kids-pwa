@@ -9,8 +9,12 @@ import * as missingLetter from './activities/missing-letter.js';
 import * as sentenceBuilder from './activities/sentence-builder.js';
 import * as pronunciation from './activities/pronunciation-practice.js';
 import * as bingo from './activities/bingo.js';
+import * as letterIntro from './activities/letter-intro.js';
+import * as wordGallery from './activities/word-gallery.js';
+import * as letterTrace from './activities/letter-trace.js';
 
 const renderers = {
+  'letter-intro': letterIntro, 'word-gallery': wordGallery, 'letter-trace': letterTrace,
   'multiple-choice': multipleChoice, 'letter-choice': audioMatch, 'image-choice': imageMatch,
   'word-heard': audioMatch, 'image-match': imageMatch, 'word-image-match': imageMatch,
   'audio-match': audioMatch, 'case-match': multipleChoice, 'letter-order': letterOrder,
