@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6c5ce7">
+  <meta name="description" content="אפליקציית PWA ללימוד אנגלית לילדים מתחילים">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/activities.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <title>אנגלית לילדים</title>
+</head>
+<body>
+  <a class="skip-link" href="#app-main">דלגו לתוכן הראשי</a>
+  <div id="offline-banner" class="offline-banner" role="status" hidden>מצב ללא אינטרנט — אפשר להמשיך ללמוד מהתוכן שנשמר במכשיר.</div>
+  <div id="app-shell" class="app-shell">
+    <header class="topbar">
+      <a href="#/home" class="brand" aria-label="אנגלית לילדים — דף הבית">
+        <span class="brand-mark" aria-hidden="true">🗣️</span>
+        <span>אנגלית לילדים</span>
+      </a>
+      <div class="topbar-actions">
+        <span id="points-pill" class="pill" aria-label="נקודות">⭐ 0</span>
+        <button id="install-button" class="icon-button" type="button" aria-label="התקנת האפליקציה" hidden>⬇️</button>
+      </div>
+    </header>
+    <main id="app-main" tabindex="-1" aria-live="polite"></main>
+    <nav class="bottom-nav" aria-label="ניווט ראשי">
+      <a href="#/home" data-nav="home"><span aria-hidden="true">🏠</span><span>בית</span></a>
+      <a href="#/path" data-nav="path"><span aria-hidden="true">🗺️</span><span>מסלול</span></a>
+      <a href="#/practice" data-nav="practice"><span aria-hidden="true">🎮</span><span>תרגול</span></a>
+      <a href="#/achievements" data-nav="achievements"><span aria-hidden="true">🏆</span><span>הישגים</span></a>
+      <a href="#/settings" data-nav="settings"><span aria-hidden="true">⚙️</span><span>הגדרות</span></a>
+    </nav>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="app-dialog" class="app-dialog"></dialog>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

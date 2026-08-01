@@ -1,0 +1,12 @@
+{
+  "music": true,
+  "volume": 0.9,
+  "speechRate": 0.85,
+  "animations": true,
+  "reducedMotion": false,
+  "textSize": "medium",
+  "highContrast": false,
+  "unlockAll": false,
+  "autoRepeat": false,
+  "version": "1.0.0"
+}

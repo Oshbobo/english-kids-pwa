@@ -1,0 +1,530 @@
+{
+  "achievements": [
+    {
+      "id": "first-lesson",
+      "title": "השיעור הראשון שלי",
+      "icon": "🌟",
+      "condition": "complete:1"
+    },
+    {
+      "id": "letter-expert",
+      "title": "מומחה אותיות",
+      "icon": "🔤",
+      "condition": "complete:10"
+    },
+    {
+      "id": "sound-champion",
+      "title": "אלוף הצלילים",
+      "icon": "🔊",
+      "condition": "stars:20"
+    },
+    {
+      "id": "beginner-reader",
+      "title": "קורא מתחיל",
+      "icon": "📖",
+      "condition": "complete:6"
+    },
+    {
+      "id": "ten-words",
+      "title": "עשר מילים חדשות",
+      "icon": "🧠",
+      "condition": "words:10"
+    },
+    {
+      "id": "three-streak",
+      "title": "שלושה שיעורים ברצף",
+      "icon": "🔥",
+      "condition": "streak:3"
+    },
+    {
+      "id": "week-streak",
+      "title": "שבוע של למידה",
+      "icon": "🏆",
+      "condition": "streak:7"
+    },
+    {
+      "id": "number-expert",
+      "title": "מומחה מספרים",
+      "icon": "🔢",
+      "condition": "stage:6"
+    },
+    {
+      "id": "sentence-builder",
+      "title": "בונה משפטים",
+      "icon": "💬",
+      "condition": "sentences:5"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "sticker-001",
+      "title": "מדבקת יחידה 1",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-002",
+      "title": "מדבקת יחידה 2",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-003",
+      "title": "מדבקת יחידה 3",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-004",
+      "title": "מדבקת יחידה 4",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-005",
+      "title": "מדבקת יחידה 5",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-006",
+      "title": "מדבקת יחידה 6",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-007",
+      "title": "מדבקת יחידה 7",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-008",
+      "title": "מדבקת יחידה 8",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-009",
+      "title": "מדבקת יחידה 9",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-010",
+      "title": "מדבקת יחידה 10",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-011",
+      "title": "מדבקת יחידה 11",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-012",
+      "title": "מדבקת יחידה 12",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-013",
+      "title": "מדבקת יחידה 13",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-014",
+      "title": "מדבקת יחידה 14",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-015",
+      "title": "מדבקת יחידה 15",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-016",
+      "title": "מדבקת יחידה 16",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-017",
+      "title": "מדבקת יחידה 17",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-018",
+      "title": "מדבקת יחידה 18",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-019",
+      "title": "מדבקת יחידה 19",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-020",
+      "title": "מדבקת יחידה 20",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-021",
+      "title": "מדבקת יחידה 21",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-022",
+      "title": "מדבקת יחידה 22",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-023",
+      "title": "מדבקת יחידה 23",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-024",
+      "title": "מדבקת יחידה 24",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-025",
+      "title": "מדבקת יחידה 25",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-026",
+      "title": "מדבקת יחידה 26",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-027",
+      "title": "מדבקת יחידה 27",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-028",
+      "title": "מדבקת יחידה 28",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-029",
+      "title": "מדבקת יחידה 29",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-030",
+      "title": "מדבקת יחידה 30",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-031",
+      "title": "מדבקת יחידה 31",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-032",
+      "title": "מדבקת יחידה 32",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-033",
+      "title": "מדבקת יחידה 33",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-034",
+      "title": "מדבקת יחידה 34",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-035",
+      "title": "מדבקת יחידה 35",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-036",
+      "title": "מדבקת יחידה 36",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-037",
+      "title": "מדבקת יחידה 37",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-038",
+      "title": "מדבקת יחידה 38",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-039",
+      "title": "מדבקת יחידה 39",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-040",
+      "title": "מדבקת יחידה 40",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-041",
+      "title": "מדבקת יחידה 41",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-042",
+      "title": "מדבקת יחידה 42",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-043",
+      "title": "מדבקת יחידה 43",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-044",
+      "title": "מדבקת יחידה 44",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-045",
+      "title": "מדבקת יחידה 45",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-046",
+      "title": "מדבקת יחידה 46",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-047",
+      "title": "מדבקת יחידה 47",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-048",
+      "title": "מדבקת יחידה 48",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-049",
+      "title": "מדבקת יחידה 49",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-050",
+      "title": "מדבקת יחידה 50",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-051",
+      "title": "מדבקת יחידה 51",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-052",
+      "title": "מדבקת יחידה 52",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-053",
+      "title": "מדבקת יחידה 53",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-054",
+      "title": "מדבקת יחידה 54",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-055",
+      "title": "מדבקת יחידה 55",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-056",
+      "title": "מדבקת יחידה 56",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-057",
+      "title": "מדבקת יחידה 57",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-058",
+      "title": "מדבקת יחידה 58",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-059",
+      "title": "מדבקת יחידה 59",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-060",
+      "title": "מדבקת יחידה 60",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-061",
+      "title": "מדבקת יחידה 61",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-062",
+      "title": "מדבקת יחידה 62",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-063",
+      "title": "מדבקת יחידה 63",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-064",
+      "title": "מדבקת יחידה 64",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-065",
+      "title": "מדבקת יחידה 65",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-066",
+      "title": "מדבקת יחידה 66",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-067",
+      "title": "מדבקת יחידה 67",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-068",
+      "title": "מדבקת יחידה 68",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-069",
+      "title": "מדבקת יחידה 69",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-070",
+      "title": "מדבקת יחידה 70",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-071",
+      "title": "מדבקת יחידה 71",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-072",
+      "title": "מדבקת יחידה 72",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-073",
+      "title": "מדבקת יחידה 73",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-074",
+      "title": "מדבקת יחידה 74",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-075",
+      "title": "מדבקת יחידה 75",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-076",
+      "title": "מדבקת יחידה 76",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-077",
+      "title": "מדבקת יחידה 77",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-078",
+      "title": "מדבקת יחידה 78",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-079",
+      "title": "מדבקת יחידה 79",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-080",
+      "title": "מדבקת יחידה 80",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-081",
+      "title": "מדבקת יחידה 81",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-082",
+      "title": "מדבקת יחידה 82",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-083",
+      "title": "מדבקת יחידה 83",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-084",
+      "title": "מדבקת יחידה 84",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-085",
+      "title": "מדבקת יחידה 85",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-086",
+      "title": "מדבקת יחידה 86",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-087",
+      "title": "מדבקת יחידה 87",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-088",
+      "title": "מדבקת יחידה 88",
+      "icon": "🐳"
+    },
+    {
+      "id": "sticker-089",
+      "title": "מדבקת יחידה 89",
+      "icon": "🦋"
+    },
+    {
+      "id": "sticker-090",
+      "title": "מדבקת יחידה 90",
+      "icon": "⭐"
+    },
+    {
+      "id": "sticker-091",
+      "title": "מדבקת יחידה 91",
+      "icon": "🌈"
+    },
+    {
+      "id": "sticker-092",
+      "title": "מדבקת יחידה 92",
+      "icon": "🦄"
+    },
+    {
+      "id": "sticker-093",
+      "title": "מדבקת יחידה 93",
+      "icon": "🚀"
+    },
+    {
+      "id": "sticker-094",
+      "title": "מדבקת יחידה 94",
+      "icon": "🐳"
+    }
+  ]
+}

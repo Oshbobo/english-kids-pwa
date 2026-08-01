@@ -1,0 +1,138 @@
+[
+  {
+    "id": "sentence-001",
+    "text": "My name is…",
+    "translation": "קוראים לי…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "name"
+  },
+  {
+    "id": "sentence-002",
+    "text": "I am…",
+    "translation": "אני…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "am"
+  },
+  {
+    "id": "sentence-003",
+    "text": "I like…",
+    "translation": "אני אוהב/ת…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "like"
+  },
+  {
+    "id": "sentence-004",
+    "text": "I have…",
+    "translation": "יש לי…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "have"
+  },
+  {
+    "id": "sentence-005",
+    "text": "This is…",
+    "translation": "זה / זאת…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "this"
+  },
+  {
+    "id": "sentence-006",
+    "text": "It is…",
+    "translation": "זה…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "is"
+  },
+  {
+    "id": "sentence-007",
+    "text": "I can…",
+    "translation": "אני יכול/ה…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "can"
+  },
+  {
+    "id": "sentence-008",
+    "text": "I see…",
+    "translation": "אני רואה…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "see"
+  },
+  {
+    "id": "sentence-009",
+    "text": "I want…",
+    "translation": "אני רוצה…",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "want"
+  },
+  {
+    "id": "sentence-010",
+    "text": "How are you?",
+    "translation": "מה שלומך?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "how"
+  },
+  {
+    "id": "sentence-011",
+    "text": "What is your name?",
+    "translation": "איך קוראים לך?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "name"
+  },
+  {
+    "id": "sentence-012",
+    "text": "How old are you?",
+    "translation": "בן/בת כמה את/ה?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "old"
+  },
+  {
+    "id": "sentence-013",
+    "text": "What color is it?",
+    "translation": "איזה צבע זה?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "color"
+  },
+  {
+    "id": "sentence-014",
+    "text": "Where is the…?",
+    "translation": "איפה ה־…?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "where"
+  },
+  {
+    "id": "sentence-015",
+    "text": "Can you…?",
+    "translation": "האם את/ה יכול/ה…?",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "can"
+  },
+  {
+    "id": "sentence-016",
+    "text": "Yes, I can.",
+    "translation": "כן, אני יכול/ה.",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "yes"
+  },
+  {
+    "id": "sentence-017",
+    "text": "No, I can’t.",
+    "translation": "לא, אני לא יכול/ה.",
+    "audio": "",
+    "image": "assets/images/words/placeholder.svg",
+    "focus": "no"
+  }
+]

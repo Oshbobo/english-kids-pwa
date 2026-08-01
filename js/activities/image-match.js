@@ -1,0 +1,2 @@
+import { shell, makeChoices, el } from './activity-utils.js';
+export function render(activity, ctx) { const root = shell(activity); const img=el('img',{className:'word-image',src:activity.image||'assets/images/words/placeholder.svg',alt:'תמונת רמז לפעילות',loading:'lazy'}); img.addEventListener('error',()=>{img.src='assets/images/words/placeholder.svg'}); const {grid,feedback}=makeChoices(activity,ctx); root.append(img,grid,feedback); return root; }
