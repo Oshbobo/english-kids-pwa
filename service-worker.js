@@ -1,12 +1,12 @@
-const VERSION = 'english-kids-v1.0.0';
+const VERSION = 'english-kids-v1.1.0';
 const STATIC_CACHE = `${VERSION}-static`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const MEDIA_CACHE = `${VERSION}-media`;
 const CORE = [
   './','./index.html','./offline.html','./manifest.webmanifest',
   './css/reset.css','./css/variables.css','./css/layout.css','./css/components.css','./css/activities.css','./css/animations.css','./css/responsive.css',
-  './js/app.js','./js/router.js','./js/storage.js','./js/audio.js','./js/speech.js','./js/recorder.js','./js/progress.js','./js/rewards.js','./js/accessibility.js','./js/lesson-engine.js','./js/activity-engine.js','./js/data-loader.js',
-  './js/activities/activity-utils.js','./js/activities/multiple-choice.js','./js/activities/image-match.js','./js/activities/audio-match.js','./js/activities/letter-order.js','./js/activities/word-builder.js','./js/activities/memory-game.js','./js/activities/sorting-game.js','./js/activities/missing-letter.js','./js/activities/sentence-builder.js','./js/activities/pronunciation-practice.js','./js/activities/bingo.js',
+  './js/app.js','./js/starter-content.js','./js/router.js','./js/storage.js','./js/audio.js','./js/speech.js','./js/recorder.js','./js/progress.js','./js/rewards.js','./js/accessibility.js','./js/lesson-engine.js','./js/activity-engine.js','./js/data-loader.js',
+  './js/activities/activity-utils.js','./js/activities/letter-intro.js','./js/activities/word-gallery.js','./js/activities/letter-trace.js','./js/activities/multiple-choice.js','./js/activities/image-match.js','./js/activities/audio-match.js','./js/activities/letter-order.js','./js/activities/word-builder.js','./js/activities/memory-game.js','./js/activities/sorting-game.js','./js/activities/missing-letter.js','./js/activities/sentence-builder.js','./js/activities/pronunciation-practice.js','./js/activities/bingo.js',
   './data/course.json','./data/lessons.json','./data/words.json','./data/sentences.json','./data/rewards.json','./data/settings.json',
   './assets/images/words/placeholder.svg','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/icon-maskable-512.png'
 ];
