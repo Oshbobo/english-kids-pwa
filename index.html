@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#6c5ce7">
   <meta name="description" content="אפליקציית PWA ללימוד אנגלית לילדים מתחילים">
-  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="app-version" content="1.2.0">
+  <link rel="manifest" href="manifest.webmanifest?v=1.2.0">
   <link rel="icon" href="assets/icons/icon-192.png">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/activities.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/reset.css?v=1.2.0">
+  <link rel="stylesheet" href="css/variables.css?v=1.2.0">
+  <link rel="stylesheet" href="css/layout.css?v=1.2.0">
+  <link rel="stylesheet" href="css/components.css?v=1.2.0">
+  <link rel="stylesheet" href="css/activities.css?v=1.2.0">
+  <link rel="stylesheet" href="css/animations.css?v=1.2.0">
+  <link rel="stylesheet" href="css/responsive.css?v=1.2.0">
   <title>אנגלית לילדים</title>
 </head>
 <body>
@@ -42,6 +43,29 @@
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <dialog id="app-dialog" class="app-dialog"></dialog>
-  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    const APP_VERSION = '1.2.0';
+    const VERSION_KEY = 'english-kids-shell-version';
+
+    if (localStorage.getItem(VERSION_KEY) !== APP_VERSION) {
+      try {
+        if ('serviceWorker' in navigator) {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map(registration => registration.unregister()));
+        }
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          await Promise.all(cacheNames
+            .filter(name => name.startsWith('english-kids-'))
+            .map(name => caches.delete(name)));
+        }
+      } catch (error) {
+        console.warn('Cache refresh failed', error);
+      }
+      localStorage.setItem(VERSION_KEY, APP_VERSION);
+    }
+
+    await import(`./js/app.js?v=${APP_VERSION}`);
+  </script>
 </body>
 </html>
